@@ -785,3 +785,27 @@ Effective prompt engineering for agent harnesses is not about clever tricks or m
 5. **Keep the entry point concise and the references comprehensive.** The `AGENTS.md` file is a table of contents, not an encyclopedia.
 
 These principles compound. A well-structured system prompt with clear constraints produces an agent that makes better tool calls, which produces better intermediate results, which reduces the need for human intervention, which makes the entire system more efficient. The upfront investment in prompt engineering pays dividends across every agent run.
+
+---
+
+## Annotated Bibliography
+
+**[1]** Anthropic. "Prompting Best Practices — Claude 4.6." *Claude Documentation*, 2025. https://platform.claude.com/docs/en/docs/build-with-claude/prompt-engineering/claude-4-best-practices
+
+> The primary source for this chapter's prompt engineering techniques. Covers system prompt clarity, XML tag structuring, role-setting, long-context grounding, agentic system prompting (initializer vs. continuation prompts, multi-context window state management), subagent orchestration guidance, and all five anti-patterns (overthinking, overeagerness, test-gaming, hallucination, overengineering).
+
+**[2]** Lopopolo, Ryan. "Harness Engineering: Leveraging Codex in an Agent-First World." *OpenAI*, February 2026. https://openai.com/index/harness-engineering/
+
+> Introduces the AGENTS.md-as-table-of-contents pattern that is central to this chapter's section on writing effective agent instruction files. The progressive disclosure approach to agent context — ~100 lines of pointers rather than a monolithic instruction file — is the single most cited architectural pattern in harness engineering.
+
+**[3]** Anthropic. "Effective Harnesses for Long-Running Agents." *Anthropic Engineering Blog*, November 26, 2025. https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
+
+> Provides the concrete prompt designs for initializer and coding agents discussed in this chapter. The two-prompt architecture (specialized first-run prompt vs. incremental-progress prompt) and the state management strategy using progress.txt, JSON feature lists, and git logs are directly drawn from this research.
+
+**[4]** Anthropic. "Effective Context Engineering for AI Agents." *Anthropic Engineering Blog*, September 29, 2025. https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+
+> Provides the theoretical foundation for the "right altitude" concept in system prompt design — the Goldilocks zone between brittle hardcoded logic and vague high-level guidance. Also covers the hybrid context strategy (upfront loading + just-in-time retrieval) that informs how AGENTS.md and referenced docs should interact.
+
+**[5]** Anthropic. "Building Effective Agents." *Anthropic Engineering Blog*, December 19, 2024. https://www.anthropic.com/engineering/building-effective-agents
+
+> The appendix on prompt engineering your tools provides foundational guidance for tool description writing that directly applies to the tool-related prompting covered in this chapter. The principle of designing tool formats that minimize "formatting overhead" for the model is essential context for understanding why JSON vs. Markdown choices matter.

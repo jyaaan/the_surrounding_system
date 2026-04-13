@@ -501,3 +501,27 @@ Designing tools for agents is a new discipline at the intersection of API design
 The ACI is young — we are at the equivalent of early GUI design, still discovering which patterns work and which fail. But the principles in this chapter have been validated through extensive empirical work on real-world agent systems, from SWE-bench to production deployments. They represent the current best understanding of how to build tools that make agents effective.
 
 The next chapter addresses the other side of the equation: how to structure the codebase and enforce architectural constraints so that agents — and the tools they wield — operate within boundaries that ensure correctness at scale.
+
+---
+
+## Annotated Bibliography
+
+**[1]** Anthropic. "Writing Effective Tools for AI Agents." *Anthropic Engineering Blog*, September 11, 2025. https://www.anthropic.com/engineering/writing-tools-for-agents
+
+> The primary reference for this chapter's treatment of tool design principles. Covers the Agent-Computer Interface concept, tool consolidation patterns, response formatting, error message design, and the iterative eval-driven approach to tool development. The source of the empirical findings on SWE-bench tool description impact discussed in this chapter.
+
+**[2]** Anthropic. "Building Effective Agents." *Anthropic Engineering Blog*, December 19, 2024. https://www.anthropic.com/engineering/building-effective-agents
+
+> Provides foundational context for how agents select and invoke tools within agentic loops. Relevant to this chapter's discussion of tool selection complexity, the costs of expansive toolkits, and the importance of designing tools that fit naturally into an agent's reasoning cycle.
+
+**[3]** Anthropic. "Prompting Best Practices — Claude 4.6." *Claude Documentation*, 2025. https://platform.claude.com/docs/en/docs/build-with-claude/prompt-engineering/claude-4-best-practices
+
+> Covers prompting techniques that directly inform the chapter's guidance on writing tool descriptions, including how to structure parameter documentation, provide examples, and handle edge cases in tool schemas. Relevant to the sections on prompt-engineering tool descriptions and the "new hire" mental model.
+
+**[4]** Anthropic. "Code Execution with MCP: Building More Efficient Agents." *Anthropic Engineering Blog*, 2025. https://www.anthropic.com/engineering/code-execution-with-mcp
+
+> Discusses the Model Context Protocol as a mechanism for exposing tools to agents, directly relevant to the chapter's coverage of namespacing MCP server tools, tool schema design for MCP endpoints, and the architectural considerations for tools that execute code on behalf of agents.
+
+**[5]** Anthropic. "Demystifying Evals for AI Agents." *Anthropic Engineering Blog*, 2025. https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
+
+> Provides the methodological framework for the chapter's emphasis on iterating tool designs through evaluation. Relevant to the sections on running evals programmatically, analyzing agent transcripts, and the build-measure-learn cycle for tool development.

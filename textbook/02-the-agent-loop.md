@@ -298,3 +298,27 @@ The agent loop — gather context, take action, verify work, repeat — is the f
 Understanding this loop deeply changes how you design agent systems. You stop trying to make each phase perfect in isolation and start optimizing for the *quality of information flow between phases*. You invest in tools that produce informative errors. You design verification steps that generate useful context. You structure context gathering to support the specific actions the agent will take.
 
 The agent loop is simple. Building it well is not. The next chapter examines the resource that constrains every phase of this loop: the context window.
+
+---
+
+## Annotated Bibliography
+
+**[1]** Anthropic. "Writing Effective Tools for AI Agents." *Anthropic Engineering Blog*, September 11, 2025. https://www.anthropic.com/engineering/writing-tools-for-agents
+
+> Directly relevant to Section 2.2's discussion of tools as primary building blocks. Covers the design principles that make tools effective for agent action selection: clear naming, focused responsibility, descriptive schemas, and informative error messages. Provides practical guidance on building the tool interfaces that agents rely on during the "Take Action" phase of the loop.
+
+**[2]** Anthropic. "Code Execution with MCP: Building More Efficient Agents." *Anthropic Engineering Blog*, 2025. https://www.anthropic.com/engineering/code-execution-with-mcp
+
+> Expands on the MCP (Model Context Protocol) discussion in Section 2.2, demonstrating how standardized code execution tools enable tighter verify-and-iterate loops. Relevant to the chapter's treatment of bash and scripts as general-purpose tools, and to the verification phase where agents run tests and check type errors as part of the agent loop.
+
+**[3]** Anthropic. "Effective Harnesses for Long-Running Agents." *Anthropic Engineering Blog*, November 26, 2025. https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
+
+> Addresses the operational challenges of the agent loop when it runs over extended periods, including stopping conditions, checkpointing, and cost controls discussed in Section 2.4. Provides practical patterns for managing iteration limits, token budgets, and the error recovery strategies that prevent runaway loops.
+
+**[4]** Anthropic. "New Capabilities for Building Agents on the Anthropic API." *Anthropic Blog*, 2025. https://claude.com/blog/agent-capabilities-api
+
+> Documents the API-level capabilities that implement the agent loop's core phases: tool invocation for the action phase, streaming for real-time observation, and structured output for verification. Relevant to understanding the concrete mechanisms through which the gather-act-verify cycle is executed in production agent systems.
+
+**[5]** Anthropic. "Demystifying Evals for AI Agents." *Anthropic Engineering Blog*, 2025. https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
+
+> Directly relevant to Section 2.3's treatment of verification methods, including rules-based feedback, visual feedback, and LLM-as-Judge. Provides frameworks for evaluating agent output quality and designing verification strategies that generate useful context for the next iteration of the loop, which the chapter identifies as the key mechanism for iterative refinement.

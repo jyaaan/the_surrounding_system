@@ -324,3 +324,27 @@ Effective context is structured in layers: system prompts at the right altitude,
 Long-horizon tasks require active context management: compaction, tool result clearing, structured note-taking, and sub-agent architectures. These are not optional optimizations — they are essential infrastructure for any agent that operates beyond a single short conversation.
 
 The context engineering mindset is simple: for every token in the context window, ask whether it is earning its keep. If it is not directly helping the model make its current decision, it is hurting.
+
+---
+
+## Annotated Bibliography
+
+**[1]** Anthropic. "Effective Context Engineering for AI Agents." *Anthropic Engineering Blog*, September 29, 2025. https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+
+> The most directly relevant source for this chapter. Covers the core thesis that context engineering is distinct from and broader than prompt engineering, the signal-to-noise ratio problem in transformer attention, and practical strategies for curating optimal token sets throughout inference sessions. Provides the empirical and theoretical basis for the chapter's treatment of context as a finite resource with diminishing marginal returns.
+
+**[2]** Lopopolo, Ryan. "Harness Engineering: Leveraging Codex in an Agent-First World." *OpenAI*, February 2026. https://openai.com/index/harness-engineering/
+
+> Introduces the Table of Contents pattern (via the AGENTS.md convention) discussed in Section 3.3, where a concise index file provides high-level orientation and pointers to detailed documentation that the agent loads on demand. Demonstrates how progressive disclosure was applied at scale in a production agent system, validating the chapter's guidance on structuring agent knowledge as a navigable hierarchy rather than a monolithic prompt.
+
+**[3]** Anthropic. "Effective Harnesses for Long-Running Agents." *Anthropic Engineering Blog*, November 26, 2025. https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
+
+> Directly relevant to Section 3.4's treatment of context for long-horizon tasks. Covers the practical implementation of compaction, tool result clearing, and sub-agent architectures as strategies for managing context rot in agents that operate over extended periods. Provides production-tested approaches to the context management challenges that arise when agent sessions exceed the capacity of a single context window.
+
+**[4]** Anthropic. "Prompting Best Practices — Claude 4.6." *Claude Documentation*, 2025. https://platform.claude.com/docs/en/docs/build-with-claude/prompt-engineering/claude-4-best-practices
+
+> Provides model-specific guidance on system prompt design, few-shot example construction, and instruction formatting that complements the general principles in Sections 3.2 and 3.3. Relevant to the chapter's discussion of finding the right altitude for system prompts (neither too specific nor too vague) and designing few-shot examples that communicate format, reasoning pattern, and quality bar simultaneously.
+
+**[5]** Anthropic. "Building Effective Agents." *Anthropic Engineering Blog*, December 19, 2024. https://www.anthropic.com/engineering/building-effective-agents
+
+> Provides foundational context for the chapter's discussion of tool set design and its impact on context window utilization. Introduces the Minimal Sufficient Tool Set principle and dynamic tool loading, both discussed in Section 3.2's treatment of tool definitions as high-token-cost components that shape the agent's action space and consume attention budget.

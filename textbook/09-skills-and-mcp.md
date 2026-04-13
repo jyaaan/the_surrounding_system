@@ -455,3 +455,27 @@ This shift in mental model — from "AI assistant" to "program with a sophistica
 | Files API | Upload once, reference repeatedly across requests |
 | Extended prompt caching | 1-hour TTL (12x standard), up to 90% cost reduction for high-volume workloads |
 | Agent runtime | Think of agent infrastructure as a purpose-built runtime: skills as libraries, MCP as system calls, code execution as subprocess |
+
+---
+
+## Annotated Bibliography
+
+**[1]** Anthropic. "Equipping Agents for the Real World with Agent Skills." *Anthropic Blog*, 2025. https://claude.com/blog/equipping-agents-for-the-real-world-with-agent-skills
+
+> The primary source for the skills architecture covered in the first half of this chapter. Introduces the directory-based skill format with SKILL.md and YAML frontmatter, the three-level progressive disclosure design, and practical development guidelines including starting with evaluation, structuring for scale, and iterating collaboratively with Claude.
+
+**[2]** Anthropic. "Code Execution with MCP: Building More Efficient Agents." *Anthropic Engineering Blog*, 2025. https://www.anthropic.com/engineering/code-execution-with-mcp
+
+> The primary source for the MCP scaling problem and the tools-as-code-APIs solution. Documents the two critical bottlenecks — tool definition overload and intermediate result redundancy — and the code execution pattern that achieves ~98.7% token reduction. Essential reading for understanding why naive MCP integration doesn't scale and what the alternative looks like.
+
+**[3]** Anthropic. "New Capabilities for Building Agents on the Anthropic API." *Anthropic Blog*, 2025. https://claude.com/blog/agent-capabilities-api
+
+> Covers the four API capabilities discussed at the end of this chapter: the sandboxed code execution tool, MCP Connector for remote servers, Files API for persistent uploads, and extended prompt caching with 1-hour TTL. Provides the practical infrastructure layer that makes the patterns in this chapter implementable.
+
+**[4]** Anthropic. "Building Agents with the Claude Agent SDK." *Anthropic Blog*, September 29, 2025. https://claude.com/blog/building-agents-with-the-claude-agent-sdk
+
+> Provides the broader context for how skills and MCP fit into the agent loop. The SDK's design principle — "give your agents a computer" — explains why MCP and code execution are so powerful: they extend the agent's computer with standardized external capabilities rather than requiring custom integration code.
+
+**[5]** Anthropic. "Effective Context Engineering for AI Agents." *Anthropic Engineering Blog*, September 29, 2025. https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+
+> The progressive disclosure pattern described for skills is a direct application of the context engineering principles in this article. The insight that "agents with a filesystem and code execution tools don't need to read the entirety of a skill" follows directly from the attention budget concept and the principle of minimizing tokens for maximum signal.

@@ -1610,3 +1610,31 @@ Building a harness is an engineering discipline, not a creative exercise. The st
 The two examples in this chapter — a full-stack web app and a research agent — demonstrate that the same framework applies across radically different domains. The tools change, the verification methods change, the failure modes change, but the structure is the same. That is the power of the harness pattern: it gives you a repeatable process for making agents effective in any domain.
 
 Start with the checklist. Build the minimum viable harness. Run agents against it. Read the transcripts. Fix what breaks. Measure the improvement. Repeat. The harness will never be "done" — it will evolve with your project, your agents, and your understanding. That is not a flaw; it is the nature of the work.
+
+---
+
+## Annotated Bibliography
+
+**[1]** Lopopolo, Ryan. "Harness Engineering: Leveraging Codex in an Agent-First World." *OpenAI*, February 2026. https://openai.com/index/harness-engineering/
+
+> The foundational case study for this chapter. The repository structure, layered architecture pattern (Types → Config → Repo → Service → Runtime → UI), progressive disclosure docs layout, mechanical enforcement via custom linters, and garbage collection model are all drawn from this five-month experiment. The most concrete evidence that the harness-building process described in this chapter works at scale.
+
+**[2]** Anthropic. "Building Effective Agents." *Anthropic Engineering Blog*, December 19, 2024. https://www.anthropic.com/engineering/building-effective-agents
+
+> Provides the workflow pattern taxonomy (prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer) used to design the agent loops in both worked examples. The principle of starting simple and the appendix on tool description design directly inform Steps 1 and 3 of the harness-building process.
+
+**[3]** Anthropic. "Effective Harnesses for Long-Running Agents." *Anthropic Engineering Blog*, November 26, 2025. https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
+
+> The initializer/coding agent split and the progress tracking artifacts (init.sh, progress file, JSON feature list) described in Step 5 are drawn directly from this research. The failure mode table — mapping problems to initializer and coding agent behaviors — is an essential reference for the long-running agent support section.
+
+**[4]** Anthropic. "Writing Effective Tools for AI Agents." *Anthropic Engineering Blog*, September 11, 2025. https://www.anthropic.com/engineering/writing-tools-for-agents
+
+> Informs Step 3 (Tool Design) with practical guidance on tool consolidation, namespacing, meaningful return values, and the evaluation-driven development loop. The distinction between strong and weak evaluation tasks is directly applied in the eval suite scaffolding in Step 4.
+
+**[5]** Anthropic. "Demystifying Evals for AI Agents." *Anthropic Engineering Blog*, 2025. https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
+
+> Provides the evaluation framework used in Step 4 (Feedback Loops). The capability vs. regression eval distinction, the three grader types, and the nine-step roadmap to great evals are the basis for the eval suite configuration shown in the worked examples.
+
+**[6]** Anthropic. "Effective Context Engineering for AI Agents." *Anthropic Engineering Blog*, September 29, 2025. https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+
+> The context engineering principles — attention budget, progressive disclosure, compaction strategies — inform the entire harness-building process, from repository structure (Step 1) to long-running agent support (Step 5). Understanding context as a finite resource with diminishing returns is the theoretical foundation for every structural decision in a harness.

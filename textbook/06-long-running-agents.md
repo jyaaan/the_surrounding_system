@@ -354,3 +354,23 @@ The key insights are:
 - **The harness does the heavy lifting.** The prompts provide guidance, but the infrastructure — the bootstrap script, the feature list format, the git history, the testing tools — provides the guardrails that make long-running agents practical.
 
 In the next chapter, we will examine how feedback loops and verification systems can be designed to replace human QA entirely — turning the agent from a developer who needs code review into a developer who reviews their own code with the rigor of a hostile critic.
+
+---
+
+## Annotated Bibliography
+
+**[1]** Anthropic. "Effective Harnesses for Long-Running Agents." *Anthropic Engineering Blog*, November 26, 2025. https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
+
+> The primary source for this chapter. Documents the two-part solution (initializer agent + coding agent), the shift-change amnesia problem, the two canonical failure modes (one-shot overreach and premature completion), the JSON feature list pattern, the getting-up-to-speed protocol, and the failure mode reference table. All experimental findings on building a claude.ai clone across multiple context windows are drawn from this research.
+
+**[2]** Anthropic. "Effective Context Engineering for AI Agents." *Anthropic Engineering Blog*, September 29, 2025. https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+
+> Provides the context management theory that underpins the long-running agent problem. Covers compaction (summarizing conversations nearing context limits), tool result clearing, and structured note-taking — the three strategies for managing context across sessions. The insight that compaction alone is insufficient is the starting point for this chapter's harness-based solution.
+
+**[3]** Lopopolo, Ryan. "Harness Engineering: Leveraging Codex in an Agent-First World." *OpenAI*, February 2026. https://openai.com/index/harness-engineering/
+
+> Demonstrates long-running agents at production scale, with single Codex runs working for six hours autonomously. The feedback loop infrastructure (Chrome DevTools Protocol, isolated app instances per git worktree, DOM snapshots) described in this article represents the state of the art in keeping long-running agents productive. Validates the incremental-progress-with-verification approach.
+
+**[4]** Anthropic. "Prompting Best Practices — Claude 4.6." *Claude Documentation*, 2025. https://platform.claude.com/docs/en/docs/build-with-claude/prompt-engineering/claude-4-best-practices
+
+> Covers the multi-context-window workflow prompting techniques directly applied in this chapter: using different prompts for first vs. subsequent context windows, state management with progress.txt and tests.json, running integration tests before starting new features, and using git for checkpointing.

@@ -292,3 +292,23 @@ Technical debt is not eliminated. It never is, in any engineering organization. 
 | Style vs substance | Enforce style only when inconsistency would cause agents to generate worse code |
 | Human communication | Daily standups are more important with agents, not less — drift happens faster |
 | Expertise multiplier | Each specialist's knowledge is amplified across all agent-generated code |
+
+---
+
+## Annotated Bibliography
+
+**[1]** Lopopolo, Ryan. "Harness Engineering: Leveraging Codex in an Agent-First World." *OpenAI*, February 2026. https://openai.com/index/harness-engineering/
+
+> The primary source for this chapter's core concepts. Lopopolo details how his team spent 20% of their time on "Friday cleanup" of AI-generated code before developing the garbage collection model — encoding golden principles, running background scans, and auto-generating refactoring PRs. Also introduces the merge philosophy of "corrections are cheap, waiting is expensive" and the counterintuitive finding that daily standups become more important as agent throughput increases.
+
+**[2]** Anthropic. "Building Effective Agents." *Anthropic Engineering Blog*, December 19, 2024. https://www.anthropic.com/engineering/building-effective-agents
+
+> Establishes the evaluator-optimizer workflow pattern that underpins the automated quality scanning described in this chapter. The principle of starting simple and adding complexity only when it demonstrably improves outcomes applies directly to the garbage collection model — start with manual review, graduate to automated scanning only when patterns are clear.
+
+**[3]** Anthropic. "Effective Context Engineering for AI Agents." *Anthropic Engineering Blog*, September 29, 2025. https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+
+> Provides the theoretical basis for why agents replicate existing patterns: they attend to what exists in context. This explains why bad patterns compound exponentially — each instance of a suboptimal pattern increases its representation in the agent's context, making replication more likely. Understanding this mechanism is essential for designing effective golden principles.
+
+**[4]** Anthropic. "Demystifying Evals for AI Agents." *Anthropic Engineering Blog*, 2025. https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
+
+> The quality grades and per-domain tracking described in this chapter are a form of regression evaluation. This article's framework for capability vs. regression evals directly informs how to measure whether garbage collection is working — graduated capability evals become regression suites that catch quality backsliding.

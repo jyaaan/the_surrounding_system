@@ -570,3 +570,27 @@ Replacing human QA with automated feedback loops is not a single technique — i
 The common thread is *closing loops*. Every gap between "agent writes code" and "agent verifies code works" is a gap where bugs hide. Every observation channel you wire into the agent's runtime — DOM snapshots, screenshots, log queries, metrics, linting output, test results — closes one of these gaps. The tighter the loops, the more the agent can be trusted to work autonomously, and the more human attention can be redirected from routine verification to the high-judgment work that humans still do best.
 
 In the next chapter, we will examine how these verification systems interact with deployment pipelines, exploring the patterns for safely shipping agent-generated code to production.
+
+---
+
+## Annotated Bibliography
+
+**[1]** Lopopolo, Ryan. "Harness Engineering: Leveraging Codex in an Agent-First World." *OpenAI*, February 2026. https://openai.com/index/harness-engineering/
+
+> The primary source for the agent legibility concept and the seven legibility metrics. Documents the Chrome DevTools Protocol integration, isolated app instances per git worktree, DOM snapshotting, and the fix-restart-revalidate loop. The finding that single Codex runs worked for six hours autonomously demonstrates the power of well-designed feedback loops replacing human QA.
+
+**[2]** Anthropic. "Demystifying Evals for AI Agents." *Anthropic Engineering Blog*, 2025. https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
+
+> The primary source for the evaluation systems section of this chapter. Defines the evaluation vocabulary (task, trial, grader, transcript, outcome), catalogs the three grader types (code-based, model-based, human), distinguishes capability from regression evals, introduces pass@k and pass^k metrics, and provides the nine-step roadmap to building great evals.
+
+**[3]** Anthropic. "Building Effective Agents." *Anthropic Engineering Blog*, December 19, 2024. https://www.anthropic.com/engineering/building-effective-agents
+
+> Introduces the evaluator-optimizer workflow pattern that this chapter covers in the context of feedback loops. The principle that "iterative refinement provides measurable value" when clear evaluation criteria exist is the theoretical basis for automated verification replacing human QA.
+
+**[4]** Anthropic. "Building Agents with the Claude Agent SDK." *Anthropic Blog*, September 29, 2025. https://claude.com/blog/building-agents-with-the-claude-agent-sdk
+
+> Covers the three verification approaches (rules-based feedback, visual feedback, LLM-as-judge) that form the foundation of the feedback loop design discussed in this chapter. The guidance on defining rules, using Playwright for visual feedback, and the limitations of LLM-as-judge directly inform the verification strategy selection.
+
+**[5]** Anthropic. "Writing Effective Tools for AI Agents." *Anthropic Engineering Blog*, September 11, 2025. https://www.anthropic.com/engineering/writing-tools-for-agents
+
+> Covers the evaluation-driven tool development loop that connects feedback loops to tool improvement. The methodology for generating evaluation tasks, running evals programmatically, and analyzing transcripts provides the practical framework for measuring whether feedback loops are actually working.

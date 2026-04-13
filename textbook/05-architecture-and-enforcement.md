@@ -690,3 +690,27 @@ The result is a codebase where agents can operate at high speed with high confid
 This is the paradox of constraints in agent-assisted development: **more constraints produce more freedom.** The team with strict architectural enforcement ships faster than the team with "move fast and break things" because their agents don't break things. The upfront investment in rules, tests, and enforcement pays compound returns as the team scales — each new agent, each new engineer, each new tool operates within a system designed to make correctness the path of least resistance.
 
 In the next chapter, we'll explore how to test and evaluate agent systems — how to know whether your tools, architecture, and enforcement patterns are actually working, and how to identify and fix the gaps.
+
+---
+
+## Annotated Bibliography
+
+**[1]** Lopopolo, Ryan. "Harness Engineering: Leveraging Codex in an Agent-First World." *OpenAI*, February 2026. https://openai.com/index/harness-engineering/
+
+> Describes the layered architecture pattern (Types, Config, Repo, Service, Runtime, UI) that this chapter presents as a reference implementation. Covers the rationale for strict dependency direction and mechanical enforcement in agent-worked codebases, directly informing the chapter's treatment of architectural layers and the warehouse analogy.
+
+**[2]** Anthropic. "Building Effective Agents." *Anthropic Engineering Blog*, December 19, 2024. https://www.anthropic.com/engineering/building-effective-agents
+
+> Provides the foundational agent design principles that motivate this chapter's emphasis on mechanical enforcement over documentation. Covers how agents infer patterns from existing code and why architectural guardrails are essential for maintaining codebase quality at scale.
+
+**[3]** Anthropic. "Effective Context Engineering for AI Agents." *Anthropic Engineering Blog*, September 29, 2025. https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+
+> Directly relevant to the chapter's discussion of error messages as agent context and the repository as single source of truth. Covers how information injected into an agent's context window shapes its behavior, supporting the chapter's argument that remediation-focused error messages serve as just-in-time instruction.
+
+**[4]** Anthropic. "Prompting Best Practices — Claude 4.6." *Claude Documentation*, 2025. https://platform.claude.com/docs/en/docs/build-with-claude/prompt-engineering/claude-4-best-practices
+
+> Informs the chapter's treatment of how agents interpret system-level instructions and codebase patterns. Relevant to the sections on encoding taste, crafting lint rule error messages, and designing the repository artifacts (design docs, execution plans) that guide agent behavior.
+
+**[5]** Anthropic. "Writing Effective Tools for AI Agents." *Anthropic Engineering Blog*, September 11, 2025. https://www.anthropic.com/engineering/writing-tools-for-agents
+
+> Complements this chapter's focus on enforcement by covering how tool-level error responses guide agent self-correction. The error message design principles from this source directly inform the chapter's taxonomy of error message quality levels (cryptic through remediation-focused).
