@@ -18,9 +18,9 @@ So what the hell is harness engineering? [Read to find out.](textbook/)
 
 ## Who This Is For
 
-The first few chapters (00-03) are for anyone who's curious. They'll give you enough to carry on a conversation about the topic in a respectable way without embarrassing yourself.
+The first few chapters (00-03) are for anyone who's curious. They'll give you enough to carry on a conversation about the topic in a somewhat respectable way.
 
-Later chapters get into architecture, tool design, feedback loops, and evaluation systems. Those are for people with some software development experience or interest. This textbook won't teach you good software design — it assumes you either have that or are working on it.
+Later chapters get into architecture, tool design, feedback loops, and evaluation systems. Those are for people with some software development experience or interest. This textbook won't teach you good software design. It assumes you either have that or are working on it.
 
 This was created specifically for me to read on my trip between SF and Tokyo, which might explain why some things are quantified in flights.
 
