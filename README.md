@@ -4,7 +4,7 @@
 
 ---
 
-After sitting through a lecture on harness engineering put on by one of my colleagues, I walked away from it thinking "what the hell is a harness?" This question quickly evaporated when I had to consider what I was having for lunch later, but it would come to be resurrected time and again through what's probably just the Baader-Meinhof effect. Whatever the reason, it was a real Lazarus of curiosity, and finally I got tired of pretending to not care that I didn't have a clue about harnesses and the kicks people were getting from them.
+After sitting through a lecture on harness engineering put on by one of my colleagues, I walked away from it thinking "what the hell is a harness?" This question quickly evaporated when I had to consider what I was having for lunch later, but it would come to be resurrected time and again through what's probably just the Baader-Meinhof effect. Whatever the reason, it was a real Lazarus of curiosity, and finally I got tired of pretending to not care that I didn't have a clue about harnesses and the incredible kicks people were getting from them.
 
 A few articles by teams at Anthropic convinced me of a bet: the future of software engineering is harness engineering. Problem was, there just weren't resources. My Instagram feed is plenty happy to drown me in ads for pointless agent certification courses, but none of them were actually teaching this. That told me this is still pretty new shit. A fresh vein in the mine. We were going to have to blast, with research.
 
