@@ -1,4 +1,6 @@
-# Harness Engineering — A Comprehensive Textbook
+# The Surrounding System
+
+### A Harness Engineering Primer
 
 **From theory to implementation: everything you need to become the "harness guy" on every team.**
 
