@@ -32,4 +32,4 @@ This is a fast-moving topic in an even faster-evolving world. I plan on updating
 
 Built with [Claude Code](https://claude.ai/claude-code). <-- this link is broken but was added by Claude Code. A strong indicator that we still need a human in the loop.
 
-John Yamashiro — [GitHub](https://github.com/jyaaan) | [LinkedIn](https://www.linkedin.com/in/johnyamashiro/)
+John Yamashiro (the human in this loop) — [GitHub](https://github.com/jyaaan) | [LinkedIn](https://www.linkedin.com/in/johnyamashiro/)
