@@ -10,6 +10,9 @@ build/
 .venv/
 venv/
 
+# Research staging (process artifacts, not public content)
+textbook/.research/
+
 # Personal notes and local config
 *notes.md
 notes/
