@@ -2,7 +2,7 @@
 
 ### A Harness Engineering Primer
 
-**From theory to implementation: everything you need to become the "harness guy" on every team.**
+**From theory to implementation: everything you need to become the "harness person" on every team.**
 
 Built from primary sources including OpenAI's *Harness Engineering* (Ryan Lopopolo, Feb 2026) and Anthropic's engineering blog series on building effective agents, context engineering, tool design, evaluations, skills, and long-running agent harnesses.
 
